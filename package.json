@@ -1,0 +1,25 @@
+{
+  "name": "smartbrainbackend",
+  "version": "1.0.0",
+  "description": "Backend for smartbrain project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsaacCisneros95/smartBrainBackEnd.git"
+  },
+  "author": "Isaac Cisneros & Instructor Andrei Neagoie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsaacCisneros95/smartBrainBackEnd/issues"
+  },
+  "homepage": "https://github.com/IsaacCisneros95/smartBrainBackEnd#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
