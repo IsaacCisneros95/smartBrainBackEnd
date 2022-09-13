@@ -18,6 +18,7 @@
   "homepage": "https://github.com/IsaacCisneros95/smartBrainBackEnd#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "express": "^4.18.1"
   },
   "devDependencies": {

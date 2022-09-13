@@ -1,14 +1,16 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const database = {
   users: [
     {
       id: "123",
       name: "John",
-      email: "john@gmail.com",
+      email: "john@email.com",
       password: "cookies",
       entries: 0,
       joined: new Date(),
@@ -16,7 +18,7 @@ const database = {
     {
       id: "124",
       name: "Sally",
-      email: "sally@gmail.com",
+      email: "sally@email.com",
       password: "bananas",
       entries: 0,
       joined: new Date(),
@@ -33,7 +35,7 @@ app.post("/signin", async (req, res) => {
     req.body.email === database.users[0].email &&
     req.body.password === database.users[0].password
   ) {
-    res.json("success");
+    res.json(database.users[0]);
   } else {
     res.status(400).json("error logging in");
   }
@@ -51,7 +53,10 @@ app.post("/register", (req, res) => {
     joined: new Date(),
   });
 
-  res.status(201).json(database.users[database.users.length - 1]);
+  const createdUser = { ...database.users[database.users.length - 1] };
+  delete createdUser.password;
+
+  res.status(201).json(createdUser);
 });
 
 app.get("/profile/:id", (req, res) => {
@@ -83,6 +88,6 @@ app.put("/image", (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("app is running on port 3000");
+app.listen(4000, () => {
+  console.log("app is running on port 4000");
 });
