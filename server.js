@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
   res.json(database.users);
 });
 
-app.post("/signin", (req, res) => {
+app.post("/signin", async (req, res) => {
   if (
     req.body.email === database.users[0].email &&
     req.body.password === database.users[0].password
@@ -37,11 +37,11 @@ app.post("/signin", (req, res) => {
   } else {
     res.status(400).json("error logging in");
   }
-  res.send("signin");
 });
 
 app.post("/register", (req, res) => {
   const { email, name, password } = req.body;
+
   database.users.push({
     id: "125",
     name,
