@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json(db.users);
+  res.json("smartbrain API");
 });
 app.post("/register", register.handleRegister(db, bcrypt));
 app.post("/signin", signin.handleSignin(db, bcrypt));
