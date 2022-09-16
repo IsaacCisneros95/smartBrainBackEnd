@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.json(database.users);
+  res.json(db.users);
 });
 app.post("/register", register.handleRegister(db, bcrypt));
 app.post("/signin", signin.handleSignin(db, bcrypt));
