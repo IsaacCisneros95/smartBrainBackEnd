@@ -8,7 +8,7 @@ const image = require("./controllers/image");
 const db = require("knex")({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
+    host: "postgresql-shallow-72165",
     database: "smart-brain",
   },
 });
